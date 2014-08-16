@@ -1,2 +1,1 @@
-ColorSquares.htm
-================
+Mirrored sqaure-based pattern visualizer.

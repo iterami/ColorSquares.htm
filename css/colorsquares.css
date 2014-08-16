@@ -1,0 +1,15 @@
+body{
+    text-align: center;
+}
+div{
+    line-height: 1px;
+}
+input{
+    text-align: center;
+}
+.square{
+    border: 1px solid #555;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+}
