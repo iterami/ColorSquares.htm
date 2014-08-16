@@ -1,1 +1,1 @@
-Mirrored sqaure-based pattern visualizer.
+Mirrored square-based pattern visualizer.
