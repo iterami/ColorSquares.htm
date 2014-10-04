@@ -29,13 +29,13 @@ function update(){
     do{
         document.getElementById(loop_counter).style.borderColor =
           loop_counter % update_counter == 0
-            ? '#000'
-            : '#fff';
+            ? '#fff'
+            : '#000';
 
         document.getElementById(624 - loop_counter).style.background =
           loop_counter % update_counter == 0
             ? '#0f0'
-            : '#fff';
+            : '#000';
     }while(loop_counter--);
 
     setTimeout(
