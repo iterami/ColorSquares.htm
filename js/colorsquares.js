@@ -46,4 +46,4 @@ function update(){
 
 var update_counter = 0;
 
-init();
+window.onload = init;
