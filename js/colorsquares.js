@@ -1,19 +1,3 @@
-function init(){
-    var colorsquares = '';
-
-    var loop_counter = 624;
-    do{
-        colorsquares += '<div class=square id=' + loop_counter + '></div>';
-        if(loop_counter % 25 == 0){
-            colorsquares += '<br>';
-        }
-    }while(loop_counter--);
-
-    document.getElementById('colorsquares').innerHTML = colorsquares;
-
-    update();
-}
-
 function reset(){
     update_counter = 0;
 }
@@ -46,4 +30,18 @@ function update(){
 
 var update_counter = 0;
 
-window.onload = init;
+window.onload = function(){
+    var colorsquares = '';
+
+    var loop_counter = 624;
+    do{
+        colorsquares += '<div class=square id=' + loop_counter + '></div>';
+        if(loop_counter % 25 == 0){
+            colorsquares += '<br>';
+        }
+    }while(loop_counter--);
+
+    document.getElementById('colorsquares').innerHTML = colorsquares;
+
+    update();
+};
