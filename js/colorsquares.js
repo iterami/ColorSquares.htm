@@ -22,7 +22,7 @@ function update(){
             : '#000';
     }while(loop_counter--);
 
-    setTimeout(
+    window.setTimeout(
       'update()',
       document.getElementById('update-interval').value
     );
