@@ -14,12 +14,12 @@ function update(){
     var loop_counter = 624;
     do{
         document.getElementById(loop_counter).style.borderColor =
-          loop_counter % update_counter == 0
+          loop_counter % update_counter === 0
             ? '#fff'
             : '#000';
 
         document.getElementById(624 - loop_counter).style.background =
-          loop_counter % update_counter == 0
+          loop_counter % update_counter === 0
             ? '#0f0'
             : '#000';
     }while(loop_counter--);
@@ -38,7 +38,7 @@ window.onload = function(){
     var loop_counter = 624;
     do{
         colorsquares += '<div class=square id=' + loop_counter + '></div>';
-        if(loop_counter % 25 == 0){
+        if(loop_counter % 25 === 0){
             colorsquares += '<br>';
         }
     }while(loop_counter--);
