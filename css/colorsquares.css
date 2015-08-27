@@ -4,7 +4,10 @@ body{
     text-align: center;
 }
 div{
-    line-height: 1px;
+    border: 1px solid #000;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
 }
 input{
     background: #000;
@@ -12,10 +15,4 @@ input{
 }
 input[type=button]{
     cursor: pointer;
-}
-.square{
-    border: 1px solid #000;
-    display: inline-block;
-    height: 20px;
-    width: 20px;
 }

@@ -37,7 +37,7 @@ window.onload = function(){
 
     var loop_counter = 624;
     do{
-        colorsquares += '<div class=square id=' + loop_counter + '></div>';
+        colorsquares += '<div id=' + loop_counter + '></div>';
         if(loop_counter % 25 === 0){
             colorsquares += '<br>';
         }
