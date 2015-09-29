@@ -1,5 +1,18 @@
 'use strict';
 
+function random_color(){
+    background_color = random_hex();
+    border_color = random_hex();
+}
+
+function random_hex(){
+    var choices = '0123456789abcdef';
+    return '#'
+      + choices.charAt(Math.floor(Math.random() * 16))
+      + choices.charAt(Math.floor(Math.random() * 16))
+      + choices.charAt(Math.floor(Math.random() * 16));
+}
+
 function reset(){
     update_counter = 0;
 }
@@ -15,12 +28,12 @@ function update(){
     do{
         document.getElementById(loop_counter).style.borderColor =
           loop_counter % update_counter === 0
-            ? '#fff'
+            ? border_color
             : '#000';
 
         document.getElementById(624 - loop_counter).style.background =
           loop_counter % update_counter === 0
-            ? '#0f0'
+            ? background_color
             : '#000';
     }while(loop_counter--);
 
@@ -30,6 +43,8 @@ function update(){
     );
 }
 
+var background_color = '#0f0';
+var border_color = '#fff';
 var update_counter = 0;
 
 window.onload = function(){
@@ -45,5 +60,6 @@ window.onload = function(){
 
     document.getElementById('colorsquares').innerHTML = colorsquares;
 
+    random_color();
     update();
 };
