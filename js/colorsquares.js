@@ -38,7 +38,7 @@ function update(){
     }while(loop_counter--);
 
     window.setTimeout(
-      'update()',
+      update,
       document.getElementById('update-interval').value
     );
 }
