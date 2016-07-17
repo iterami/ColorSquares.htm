@@ -5,14 +5,6 @@ function random_color(){
     border_color = random_hex();
 }
 
-function random_hex(){
-    var choices = '0123456789abcdef';
-    return '#'
-      + choices.charAt(Math.floor(Math.random() * 16))
-      + choices.charAt(Math.floor(Math.random() * 16))
-      + choices.charAt(Math.floor(Math.random() * 16));
-}
-
 function reset(){
     update_counter = 0;
 }
