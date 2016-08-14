@@ -1,5 +1,9 @@
 'use strict';
 
+function get_interval(){
+    update_interval = document.getElementById('update-interval').value;
+}
+
 function random_color(){
     background_color = random_hex();
     border_color = random_hex();
@@ -11,7 +15,6 @@ function reset(){
 
 function update(){
     update_counter += 1;
-
     if(update_counter > 312){
         update_counter = 1;
     }
@@ -31,13 +34,14 @@ function update(){
 
     window.setTimeout(
       update,
-      document.getElementById('update-interval').value
+      update_interval
     );
 }
 
 var background_color = '#0f0';
 var border_color = '#fff';
 var update_counter = 0;
+var update_interval = 400;
 
 window.onload = function(){
     var colorsquares = '';
@@ -51,6 +55,8 @@ window.onload = function(){
     }while(loop_counter--);
 
     document.getElementById('colorsquares').innerHTML = colorsquares;
+    document.getElementById('update-interval').value = update_interval;
+    document.getElementById('update-interval').oninput = get_interval;
 
     random_color();
     update();
