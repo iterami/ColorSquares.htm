@@ -1,5 +1,17 @@
 'use strict';
 
+function create_squares(){
+    square_count = parseInt(document.getElementById('square-count').value, 10);
+
+    var colorsquares = [];
+    var loop_counter = square_count;
+    do{
+        colorsquares.push('<div id=' + loop_counter + '></div>');
+    }while(loop_counter--);
+
+    document.getElementById('colorsquares').innerHTML = colorsquares.join('');
+}
+
 function get_interval(){
     update_interval = document.getElementById('update-interval').value;
 }
@@ -15,18 +27,18 @@ function reset(){
 
 function update(){
     update_counter += 1;
-    if(update_counter > 312){
+    if(update_counter > square_count / 2){
         update_counter = 1;
     }
 
-    var loop_counter = 624;
+    var loop_counter = square_count;
     do{
         document.getElementById(loop_counter).style.borderColor =
           loop_counter % update_counter === 0
             ? border_color
             : '#000';
 
-        document.getElementById(624 - loop_counter).style.background =
+        document.getElementById(square_count - loop_counter).style.background =
           loop_counter % update_counter === 0
             ? background_color
             : '#000';
@@ -40,24 +52,18 @@ function update(){
 
 var background_color = '#0f0';
 var border_color = '#fff';
+var square_count = 624;
 var update_counter = 0;
 var update_interval = 400;
 
 window.onload = function(){
-    var colorsquares = '';
-
-    var loop_counter = 624;
-    do{
-        colorsquares += '<div id=' + loop_counter + '></div>';
-        if(loop_counter % 25 === 0){
-            colorsquares += '<br>';
-        }
-    }while(loop_counter--);
-
-    document.getElementById('colorsquares').innerHTML = colorsquares;
+    document.getElementById('square-count').value = square_count;
     document.getElementById('update-interval').value = update_interval;
-    document.getElementById('update-interval').oninput = get_interval;
 
+    create_squares();
     random_color();
     update();
+
+    document.getElementById('square-count').oninput = create_squares;
+    document.getElementById('update-interval').oninput = get_interval;
 };
