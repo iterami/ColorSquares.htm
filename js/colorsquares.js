@@ -64,6 +64,8 @@ window.onload = function(){
     random_color();
     update();
 
+    document.getElementById('random-color').onclick = random_color;
+    document.getElementById('reset').onclick = reset;
     document.getElementById('square-count').oninput = create_squares;
     document.getElementById('update-interval').oninput = get_interval;
 };
