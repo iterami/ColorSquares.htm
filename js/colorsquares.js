@@ -17,8 +17,8 @@ function get_interval(){
 }
 
 function random_color(){
-    background_color = '#' + random_hex();
-    border_color = '#' + random_hex();
+    background_color = '#' + core_random_hex();
+    border_color = '#' + core_random_hex();
 }
 
 function reset(){
