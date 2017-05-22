@@ -6,7 +6,7 @@ function create_squares(){
     var colorsquares = [];
     var loop_counter = square_count;
     do{
-        colorsquares.push('<div id=' + loop_counter + '></div>');
+        colorsquares.push('<input class=gridbutton id=' + loop_counter + ' type=button>');
     }while(loop_counter--);
 
     document.getElementById('colorsquares').innerHTML = colorsquares.join('');
@@ -17,8 +17,8 @@ function get_interval(){
 }
 
 function random_color(){
-    background_color = '#' + core_random_hex();
-    border_color = '#' + core_random_hex();
+    changed_color = '#' + core_random_hex();
+    default_color = '#' + core_random_hex();
 }
 
 function reset(){
@@ -33,15 +33,10 @@ function update(){
 
     var loop_counter = square_count;
     do{
-        document.getElementById(loop_counter).style.borderColor =
-          loop_counter % update_counter === 0
-            ? border_color
-            : '#000';
-
         document.getElementById(square_count - loop_counter).style.background =
           loop_counter % update_counter === 0
-            ? background_color
-            : '#000';
+            ? default_color
+            : changed_color;
     }while(loop_counter--);
 
     window.setTimeout(
@@ -50,8 +45,8 @@ function update(){
     );
 }
 
-var background_color = '#0f0';
-var border_color = '#fff';
+var changed_color = '#000';
+var default_color = '#000';
 var square_count = 624;
 var update_counter = 0;
 var update_interval = 400;
