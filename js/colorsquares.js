@@ -21,6 +21,20 @@ function random_color(){
     default_color = '#' + core_random_hex();
 }
 
+function repo_init(){
+    document.getElementById('square-count').value = square_count;
+    document.getElementById('update-interval').value = update_interval;
+
+    create_squares();
+    random_color();
+    update();
+
+    document.getElementById('random-color').onclick = random_color;
+    document.getElementById('reset').onclick = reset;
+    document.getElementById('square-count').oninput = create_squares;
+    document.getElementById('update-interval').oninput = get_interval;
+}
+
 function reset(){
     update_counter = 0;
 }
@@ -50,17 +64,3 @@ var default_color = '#000';
 var square_count = 624;
 var update_counter = 0;
 var update_interval = 400;
-
-window.onload = function(){
-    document.getElementById('square-count').value = square_count;
-    document.getElementById('update-interval').value = update_interval;
-
-    create_squares();
-    random_color();
-    update();
-
-    document.getElementById('random-color').onclick = random_color;
-    document.getElementById('reset').onclick = reset;
-    document.getElementById('square-count').oninput = create_squares;
-    document.getElementById('update-interval').oninput = get_interval;
-};
