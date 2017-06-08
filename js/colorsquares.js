@@ -22,6 +22,10 @@ function random_color(){
 }
 
 function repo_init(){
+    core_repo_init({
+      'title': 'ColorSquares.htm',
+    });
+
     document.getElementById('square-count').value = square_count;
     document.getElementById('update-interval').value = update_interval;
 
