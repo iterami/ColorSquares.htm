@@ -20,7 +20,7 @@ function repo_init(){
       'storage': {
         'square-count': 624,
       },
-      'storage-menu': '<input id=square-count>',
+      'storage-menu': '<table><tr><td><input id=square-count><td>Square Count</table>',
       'title': 'ColorSquares.htm',
     });
 
