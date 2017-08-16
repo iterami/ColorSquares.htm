@@ -29,12 +29,15 @@ function repo_init(){
     random_color();
     update();
 
-    document.getElementById('random-color').onclick = random_color;
-    document.getElementById('reset').onclick = reset;
-}
-
-function reset(){
-    update_counter = 0;
+    document.getElementById('random-color').onclick =
+    document.getElementById('reset').onclick = function(){
+        random_color();
+        core_escape();
+    };
+    document.getElementById('reset').onclick = function(){
+        update_counter = 0;
+        core_escape();
+    };
 }
 
 function update(){
