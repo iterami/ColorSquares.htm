@@ -17,6 +17,7 @@ function random_color(){
 
 function repo_init(){
     core_repo_init({
+      'info': '<input id=reset type=button value=Reset><input id=random-color type=button value="Random Color">',
       'storage': {
         'square-count': 624,
       },
@@ -37,18 +38,20 @@ function reset(){
 }
 
 function update(){
-    update_counter += 1;
-    if(update_counter > core_storage_data['square-count'] / 2){
-        update_counter = 1;
-    }
+    if(!core_menu_open){
+        update_counter += 1;
+        if(update_counter > core_storage_data['square-count'] / 2){
+            update_counter = 1;
+        }
 
-    var loop_counter = core_storage_data['square-count'];
-    do{
-        document.getElementById(core_storage_data['square-count'] - loop_counter).style.background =
-          loop_counter % update_counter === 0
-            ? default_color
-            : changed_color;
-    }while(loop_counter--);
+        var loop_counter = core_storage_data['square-count'];
+        do{
+            document.getElementById(core_storage_data['square-count'] - loop_counter).style.background =
+              loop_counter % update_counter === 0
+                ? default_color
+                : changed_color;
+        }while(loop_counter--);
+    }
 
     window.setTimeout(
       update,
