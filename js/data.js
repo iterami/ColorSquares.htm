@@ -8,6 +8,9 @@ function create_squares(){
     }while(loop_counter--);
 
     document.getElementById('colorsquares').innerHTML = colorsquares.join('');
+
+    random_color();
+    update();
 }
 
 function random_color(){

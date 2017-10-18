@@ -3,6 +3,20 @@
 function repo_init(){
     core_repo_init({
       'info': '<input id=reset type=button value=Reset><input id=random-color type=button value="Random Color">',
+      'info-events': {
+        'random-color': {
+          'todo': function(){
+              random_color();
+              core_escape();
+          },
+        },
+        'reset': {
+          'todo': function(){
+              update_counter = 0;
+              core_escape();
+          },
+        },
+      },
       'storage': {
         'square-count': 624,
       },
@@ -11,16 +25,4 @@ function repo_init(){
     });
 
     create_squares();
-    random_color();
-    update();
-
-    document.getElementById('random-color').onclick =
-    document.getElementById('reset').onclick = function(){
-        random_color();
-        core_escape();
-    };
-    document.getElementById('reset').onclick = function(){
-        update_counter = 0;
-        core_escape();
-    };
 }
