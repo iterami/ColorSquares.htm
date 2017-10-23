@@ -39,7 +39,3 @@ function update(){
       core_storage_data['frame-ms']
     );
 }
-
-var changed_color = '#000';
-var default_color = '#000';
-var update_counter = 0;

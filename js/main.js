@@ -2,6 +2,11 @@
 
 function repo_init(){
     core_repo_init({
+      'globals': {
+        'changed_color': '#000',
+        'default_color': '#000',
+        'update_counter': 0,
+      },
       'info': '<input id=reset type=button value=Reset><input id=random-color type=button value="Random Color">',
       'info-events': {
         'random-color': {
