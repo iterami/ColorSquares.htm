@@ -30,4 +30,8 @@ function repo_init(){
     });
 
     create_squares();
+
+    core_interval_modify({
+      'todo': update,
+    });
 }
