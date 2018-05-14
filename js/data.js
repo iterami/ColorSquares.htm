@@ -18,8 +18,6 @@ function random_color(){
 }
 
 function reset(){
-    core_escape();
-
     update_counter = 0;
 
     core_interval_modify({

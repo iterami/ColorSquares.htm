@@ -5,12 +5,21 @@ function repo_init(){
       'events': {
         'random-color': {
           'onclick': function(){
-              random_color();
               core_escape();
+              random_color();
+          },
+        },
+        'recreate': {
+          'onclick': function(){
+              core_escape();
+              create_squares();
           },
         },
         'reset': {
-          'onclick': reset,
+          'onclick': function(){
+              reset();
+              core_escape();
+          },
         },
       },
       'globals': {
@@ -18,7 +27,7 @@ function repo_init(){
         'default_color': '#000',
         'update_counter': 0,
       },
-      'info': '<input id=reset type=button value=Reset><input id=random-color type=button value="Random Color">',
+      'info': '<input id=reset type=button value=Reset><input id=recreate type=button value=Recreate><br><input id=random-color type=button value="Random Color">',
       'storage': {
         'interval': 50,
         'square-count': 624,
@@ -29,5 +38,4 @@ function repo_init(){
 
     create_squares();
     reset();
-    core_escape();
 }
