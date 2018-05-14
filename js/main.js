@@ -10,10 +10,7 @@ function repo_init(){
           },
         },
         'reset': {
-          'onclick': function(){
-              update_counter = 0;
-              core_escape();
-          },
+          'onclick': reset,
         },
       },
       'globals': {
@@ -23,15 +20,14 @@ function repo_init(){
       },
       'info': '<input id=reset type=button value=Reset><input id=random-color type=button value="Random Color">',
       'storage': {
+        'interval': 50,
         'square-count': 624,
       },
-      'storage-menu': '<table><tr><td><input id=square-count><td>Square Count</table>',
+      'storage-menu': '<table><tr><td><input id=interval><td>Interval<tr><td><input id=square-count><td>Square Count</table>',
       'title': 'ColorSquares.htm',
     });
 
     create_squares();
-
-    core_interval_modify({
-      'todo': update,
-    });
+    reset();
+    core_escape();
 }

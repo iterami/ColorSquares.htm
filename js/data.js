@@ -17,6 +17,18 @@ function random_color(){
     default_color = '#' + core_random_hex();
 }
 
+function reset(){
+    core_escape();
+
+    update_counter = 0;
+
+    core_interval_modify({
+      'id': 'color-squares-interval',
+      'interval': core_storage_data['interval'],
+      'todo': update,
+    });
+}
+
 function update(){
     update_counter += 1;
     if(update_counter > core_storage_data['square-count'] / 2){
