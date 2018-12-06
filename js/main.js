@@ -32,7 +32,8 @@ function repo_init(){
         'interval': 50,
         'square-count': 624,
       },
-      'storage-menu': '<table><tr><td><input id=interval><td>Interval<tr><td><input id=square-count><td>Square Count</table>',
+      'storage-menu': '<table><tr><td><input id=interval><td>Interval'
+        + '<tr><td><input id=square-count><td>Square Count</table>',
       'title': 'ColorSquares.htm',
     });
 
