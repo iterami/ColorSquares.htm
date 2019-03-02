@@ -3,10 +3,10 @@
 function repo_init(){
     core_repo_init({
       'events': {
-        'random-color': {
+        'randomize': {
           'onclick': function(){
               core_escape();
-              random_color();
+              randomize();
           },
         },
         'recreate': {
@@ -27,12 +27,16 @@ function repo_init(){
         'default_color': '#000',
         'update_counter': 0,
       },
-      'info': '<input id=reset type=button value=Reset><input id=recreate type=button value=Recreate><br><input id=random-color type=button value="Random Color">',
+      'info': '<input id=reset type=button value=Reset><input id=recreate type=button value=Recreate><br><input id=randomize type=button value="Randomize">',
       'storage': {
+        'height': '25px',
         'interval': 50,
         'square-count': 624,
+        'width': '25px',
       },
-      'storage-menu': '<table><tr><td><input id=interval><td>Interval'
+      'storage-menu': '<table><tr><td><input id=height><td>Button Height'
+        + '<tr><td><input id=width><td>Button Width'
+        + '<tr><td><input id=interval><td>Interval'
         + '<tr><td><input id=square-count><td>Square Count</table>',
       'title': 'ColorSquares.htm',
     });

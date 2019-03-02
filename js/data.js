@@ -9,10 +9,18 @@ function create_squares(){
 
     document.getElementById('colorsquares').innerHTML = colorsquares.join('');
 
-    random_color();
+    randomize();
 }
 
-function random_color(){
+function randomize(){
+    let loop_counter = core_storage_data['square-count'];
+    do{
+        let element = document.getElementById(loop_counter);
+
+        element.style.height = core_storage_data['height'];
+        element.style.width = core_storage_data['width'];
+    }while(loop_counter--);
+
     changed_color = '#' + core_random_hex();
     default_color = '#' + core_random_hex();
 }
