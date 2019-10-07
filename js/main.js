@@ -15,11 +15,8 @@ function repo_init(){
               create_squares();
           },
         },
-        'reset': {
-          'onclick': function(){
-              reset();
-              core_escape();
-          },
+        'restart': {
+          'onclick': core_repo_reset,
         },
       },
       'globals': {
@@ -27,7 +24,8 @@ function repo_init(){
         'default_color': '#000',
         'update_counter': 0,
       },
-      'info': '<input id=reset type=button value=Reset><input id=recreate type=button value=Recreate><br><input id=randomize type=button value="Randomize">',
+      'info': '<input id=restart type=button value=Restart><input id=recreate type=button value=Recreate><br><input id=randomize type=button value="Randomize">',
+      'reset': reset,
       'storage': {
         'height': '25px',
         'interval': 50,
