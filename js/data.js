@@ -4,7 +4,7 @@ function create_squares(){
     let colorsquares = [];
     let loop_counter = core_storage_data['square-count'];
     do{
-        colorsquares.push('<input class=gridbutton id=' + loop_counter + ' type=button>');
+        colorsquares.push('<input class=gridbutton disabled id=' + loop_counter + ' type=button>');
     }while(loop_counter--);
 
     document.getElementById('colorsquares').innerHTML = colorsquares.join('');
