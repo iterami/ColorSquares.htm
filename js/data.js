@@ -1,7 +1,7 @@
 'use strict';
 
 function create_squares(){
-    let colorsquares = [];
+    const colorsquares = [];
     let loop_counter = core_storage_data['square-count'];
     do{
         colorsquares.push('<input class=gridbutton disabled id=' + loop_counter + ' type=button>');
@@ -15,7 +15,7 @@ function create_squares(){
 function randomize(){
     let loop_counter = core_storage_data['square-count'];
     do{
-        let element = document.getElementById(loop_counter);
+        const element = document.getElementById(loop_counter);
 
         element.style.height = core_storage_data['height'];
         element.style.width = core_storage_data['width'];
