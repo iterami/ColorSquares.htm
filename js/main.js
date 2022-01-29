@@ -34,8 +34,8 @@ function repo_init(){
       },
       'storage-menu': '<table><tr><td><input id=height><td>Button Height'
         + '<tr><td><input id=width><td>Button Width'
-        + '<tr><td><input id=interval><td>Interval'
-        + '<tr><td><input id=square-count><td>Square Count</table>',
+        + '<tr><td><input id=interval min=1 type=number><td>Interval'
+        + '<tr><td><input id=square-count min=1 type=number><td>Square Count</table>',
       'title': 'ColorSquares.htm',
     });
 
