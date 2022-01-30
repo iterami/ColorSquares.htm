@@ -28,14 +28,14 @@ function repo_init(){
       'reset': reset,
       'storage': {
         'height': '25px',
-        'interval': 50,
+        'interval': 1000,
         'square-count': 624,
         'width': '25px',
       },
       'storage-menu': '<table><tr><td><input id=height><td>Button Height'
         + '<tr><td><input id=width><td>Button Width'
-        + '<tr><td><input id=interval min=1 type=number><td>Interval'
-        + '<tr><td><input id=square-count min=1 type=number><td>Square Count</table>',
+        + '<tr><td><input id=interval min=1 step=any type=number><td>Interval'
+        + '<tr><td><input id=square-count min=1 step=any type=number><td>Square Count</table>',
       'title': 'ColorSquares.htm',
     });
 
