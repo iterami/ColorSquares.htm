@@ -43,7 +43,7 @@ function update(){
 
     let loop_counter = core_storage_data['square-count'];
     do{
-        document.getElementById(core_storage_data['square-count'] - loop_counter).style.background =
+        document.getElementById(core_storage_data['square-count'] - loop_counter).style.backgroundColor =
           loop_counter % update_counter === 0
             ? default_color
             : changed_color;
