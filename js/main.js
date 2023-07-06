@@ -32,8 +32,8 @@ function repo_init(){
         'square-count': 624,
         'width': '25px',
       },
-      'storage-menu': '<table><tr><td><input class=mini id=height><td>Button Height'
-        + '<tr><td><input class=mini id=width><td>Button Width'
+      'storage-menu': '<table><tr><td><input class=mini id=height type=text><td>Button Height'
+        + '<tr><td><input class=mini id=width type=text><td>Button Width'
         + '<tr><td><input class=mini id=interval min=1 step=any type=number><td>Interval'
         + '<tr><td><input class=mini id=square-count min=1 step=any type=number><td>Square Count</table>',
       'title': 'ColorSquares.htm',
