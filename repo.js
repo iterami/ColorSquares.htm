@@ -34,7 +34,7 @@ function repo_init(){
               randomize();
           },
         },
-        'recreate': {
+        'remake': {
           'onclick': function(){
               core_escape();
               create_squares();
@@ -49,7 +49,7 @@ function repo_init(){
         'default_color': '#000',
         'update_counter': 0,
       },
-      'info': '<input id=restart type=button value=Restart><input id=recreate type=button value=Recreate><br><input id=randomize type=button value="Randomize">',
+      'info': '<input id=restart type=button value=Restart><input id=remake type=button value=Remake><br><input id=randomize type=button value="Randomize">',
       'reset': reset,
       'storage': {
         'height': '25px',
