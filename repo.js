@@ -4,7 +4,7 @@ function create_squares(){
     const colorsquares = [];
     let loop_counter = core_storage_data['square-count'];
     do{
-        colorsquares.push('<input class=gridbutton disabled id=' + loop_counter + ' type=button>');
+        colorsquares.push('<button class=gridbutton disabled id=' + loop_counter + '></button>');
     }while(loop_counter--);
 
     document.getElementById('colorsquares').innerHTML = colorsquares.join('');
@@ -49,7 +49,7 @@ function repo_init(){
         'default_color': '#000',
         'update_counter': 0,
       },
-      'info': '<input id=restart type=button value=Restart><input id=remake type=button value=Remake><br><input id=randomize type=button value="Randomize">',
+      'info': '<button id=restart type=button>Restart</button><button id=remake type=button>Remake</button><br><button id=randomize type=button>Randomize</button>',
       'reset': reset,
       'storage': {
         'height': '25px',
