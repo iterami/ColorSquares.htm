@@ -1,13 +1,15 @@
 'use strict';
 
 function create_squares(){
-    const colorsquares = [];
+    let squares = '';
     let loop_counter = core_storage_data['square-count'];
     do{
-        colorsquares.push('<button class=gridbutton disabled id=' + loop_counter + '></button>');
+        squares += '<button class=gridbutton disabled id=' + loop_counter + '></button>';
     }while(loop_counter--);
 
-    document.getElementById('colorsquares').innerHTML = colorsquares.join('');
+    const element = document.getElementById('colorsquares');
+    element.innerHTML = squares;
+    element.style.lineHeight = '1px';
 
     randomize();
 }
