@@ -17,10 +17,9 @@ function create_squares(){
 function randomize(){
     let loop_counter = core_storage_data['square-count'];
     do{
-        const element = document.getElementById(loop_counter);
-
-        element.style.height = core_storage_data['height'];
-        element.style.width = core_storage_data['width'];
+        const style = document.getElementById(loop_counter).style;
+        style.height = core_storage_data['height'];
+        style.width = core_storage_data['width'];
     }while(loop_counter--);
 
     changed_color = '#' + core_random_hex();
