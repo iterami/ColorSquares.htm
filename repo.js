@@ -11,11 +11,9 @@ function create_squares(){
     core_elements['colorsquares'].style.lineHeight = '1px';
 
     for(const element in core_elements){
-        if(globalThis.isNaN(element)){
-            continue;
+        if(!globalThis.isNaN(element)){
+            delete core_elements[element];
         }
-
-        delete core_elements[element];
     }
     loop_counter = core_storage_data['square-count'];
     do{
