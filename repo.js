@@ -7,9 +7,20 @@ function create_squares(){
         squares += '<button class=gridbutton disabled id=' + loop_counter + '></button>';
     }while(loop_counter--);
 
-    const element = document.getElementById('colorsquares');
-    element.innerHTML = squares;
-    element.style.lineHeight = '1px';
+    core_elements['colorsquares'].innerHTML = squares;
+    core_elements['colorsquares'].style.lineHeight = '1px';
+
+    for(const element in core_elements){
+        if(globalThis.isNaN(element)){
+            continue;
+        }
+
+        delete core_elements[element];
+    }
+    loop_counter = core_storage_data['square-count'];
+    do{
+        core_elements[loop_counter] = document.getElementById(loop_counter);
+    }while(loop_counter--);
 
     randomize();
 }
@@ -17,7 +28,7 @@ function create_squares(){
 function randomize(){
     let loop_counter = core_storage_data['square-count'];
     do{
-        const style = document.getElementById(loop_counter).style;
+        const style = core_elements[loop_counter].style;
         style.height = core_storage_data['height'];
         style.width = core_storage_data['width'];
     }while(loop_counter--);
@@ -63,6 +74,9 @@ function repo_init(){
         + '<tr><td><input class=mini id=interval min=1 step=any type=number><td>Interval'
         + '<tr><td><input class=mini id=square-count min=1 step=any type=number><td>Square Count</table>',
       'title': 'ColorSquares.htm',
+      'ui-elements': [
+        'colorsquares',
+      ],
     });
 
     create_squares();
@@ -87,7 +101,7 @@ function update(){
 
     let loop_counter = core_storage_data['square-count'];
     do{
-        document.getElementById(core_storage_data['square-count'] - loop_counter).style.backgroundColor =
+        core_elements[core_storage_data['square-count'] - loop_counter].style.backgroundColor =
           loop_counter % update_counter === 0
             ? default_color
             : changed_color;
