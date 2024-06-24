@@ -33,6 +33,8 @@ function randomize(){
 
     changed_color = '#' + core_random_hex();
     default_color = '#' + core_random_hex();
+
+    reset();
 }
 
 function repo_init(){
@@ -51,7 +53,10 @@ function repo_init(){
           },
         },
         'restart': {
-          'onclick': core_repo_reset,
+          'onclick': function(){
+              core_escape();
+              core_repo_reset();
+          },
         },
       },
       'globals': {
@@ -59,7 +64,7 @@ function repo_init(){
         'default_color': '#000',
         'update_counter': 0,
       },
-      'info': '<button id=restart type=button>Restart</button><button id=remake type=button>Remake</button><br><button id=randomize type=button>Randomize</button>',
+      'info': '<button id=restart type=button>Restart</button><button id=remake type=button>Remake</button><button id=randomize type=button>Randomize</button>',
       'reset': reset,
       'storage': {
         'height': '25px',
@@ -78,12 +83,12 @@ function repo_init(){
     });
 
     create_squares();
-    reset();
 }
 
 function reset(){
     update_counter = 0;
 
+    update();
     core_interval_modify({
       'id': 'color-squares-interval',
       'interval': core_storage_data['interval'],
