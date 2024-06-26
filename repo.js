@@ -2,7 +2,7 @@
 
 function create_squares(){
     let squares = '';
-    let loop_counter = core_storage_data['square-count'];
+    let loop_counter = Math.floor(core_storage_data['square-count']);
     do{
         squares += '<button class=gridbutton disabled id=' + loop_counter + '></button>';
     }while(loop_counter--);
@@ -15,7 +15,7 @@ function create_squares(){
             delete core_elements[element];
         }
     }
-    loop_counter = core_storage_data['square-count'];
+    loop_counter = Math.floor(core_storage_data['square-count']);
     do{
         core_elements[loop_counter] = document.getElementById(loop_counter);
     }while(loop_counter--);
@@ -24,7 +24,7 @@ function create_squares(){
 }
 
 function randomize(){
-    let loop_counter = core_storage_data['square-count'];
+    let loop_counter = Math.floor(core_storage_data['square-count']);
     do{
         const style = core_elements[loop_counter].style;
         style.height = core_storage_data['height'];
@@ -75,7 +75,7 @@ function repo_init(){
       'storage-menu': '<table><tr><td><input class=mini id=height type=text><td>Button Height'
         + '<tr><td><input class=mini id=width type=text><td>Button Width'
         + '<tr><td><input class=mini id=interval min=1 step=any type=number><td>Interval'
-        + '<tr><td><input class=mini id=square-count min=1 step=any type=number><td>Square Count</table>',
+        + '<tr><td><input class=mini id=square-count min=1 step=1 type=number><td>Square Count</table>',
       'title': 'ColorSquares.htm',
       'ui-elements': [
         'colorsquares',
@@ -102,9 +102,9 @@ function update(){
         update_counter = 1;
     }
 
-    let loop_counter = core_storage_data['square-count'];
+    let loop_counter = Math.floor(core_storage_data['square-count']);
     do{
-        core_elements[core_storage_data['square-count'] - loop_counter].style.backgroundColor =
+        core_elements[Math.floor(core_storage_data['square-count']) - loop_counter].style.backgroundColor =
           loop_counter % update_counter === 0
             ? default_color
             : changed_color;
