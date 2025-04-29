@@ -55,7 +55,7 @@ function repo_init(){
         'restart': {
           'onclick': function(){
               core_escape();
-              core_repo_reset();
+              reset();
           },
         },
       },
@@ -65,7 +65,6 @@ function repo_init(){
         'update_counter': 0,
       },
       'info': '<button id=restart type=button>Restart</button><button id=remake type=button>Remake</button><button id=randomize type=button>Randomize</button>',
-      'reset': reset,
       'storage': {
         'height': '25px',
         'interval': 1000,
