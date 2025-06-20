@@ -76,7 +76,7 @@ function repo_init(){
         + '<tr><td><input class=mini id=interval min=1 step=any type=number><td>Interval'
         + '<tr><td><input class=mini id=count min=1 step=1 type=number><td>Square Count</table>',
       'title': 'ColorSquares.htm',
-      'ui-elements': [
+      'ui_elements': [
         'colorsquares',
       ],
     });
