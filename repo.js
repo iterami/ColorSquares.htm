@@ -71,7 +71,7 @@ function repo_init(){
         'interval': 1000,
         'width': '25px',
       },
-      'storage-menu': '<table><tr><td><input class=mini id=height type=text><td>Button Height'
+      'storage_menu': '<table><tr><td><input class=mini id=height type=text><td>Button Height'
         + '<tr><td><input class=mini id=width type=text><td>Button Width'
         + '<tr><td><input class=mini id=interval min=1 step=any type=number><td>Interval'
         + '<tr><td><input class=mini id=count min=1 step=1 type=number><td>Square Count</table>',
