@@ -89,7 +89,7 @@ function reset(){
 
     update();
     core_interval_modify({
-      'id': 'color-squares-interval',
+      'id': 'interval',
       'interval': core_storage_data.interval,
       'todo': update,
     });
