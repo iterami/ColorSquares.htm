@@ -42,20 +42,20 @@ function repo_init(){
       'events': {
         'randomize': {
           'onclick': function(){
-              core_escape();
               randomize();
+              core_escape();
           },
         },
         'remake': {
           'onclick': function(){
-              core_escape();
               create_squares();
+              core_escape();
           },
         },
         'restart': {
           'onclick': function(){
-              core_escape();
               reset();
+              core_escape();
           },
         },
       },
