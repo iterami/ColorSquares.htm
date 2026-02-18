@@ -64,7 +64,7 @@ function repo_init(){
         'default_color': '#000',
         'update_counter': 0,
       },
-      'info': '<button id=restart type=button>Restart</button><button id=remake type=button>Remake</button><button id=randomize type=button>Randomize</button>',
+      'info': '<button class=medium id=restart type=button>Restart</button><button class=medium id=remake type=button>Remake</button><button class=medium id=randomize type=button>Randomize</button>',
       'storage': {
         'count': 624,
         'height': '25px',
