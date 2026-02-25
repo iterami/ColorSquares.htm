@@ -1,35 +1,32 @@
 'use strict';
 
 function create_squares(){
-    let squares = '';
-    let loop_counter = Math.floor(core_storage_data.count);
-    do{
-        squares += '<button class=gridbutton disabled id=' + loop_counter + '></button>';
-    }while(loop_counter--);
-
-    core_elements.colorsquares.innerHTML = squares;
     core_elements.colorsquares.style.lineHeight = '1px';
+
+    let squares = '';
+    for(let i = 0; i < core_storage_data.count; i++){
+        squares += '<button class=gridbutton disabled id=' + i + '></button>';
+    }
+    core_elements.colorsquares.innerHTML = squares;
 
     for(const element in core_elements){
         if(!globalThis.isNaN(element)){
             delete core_elements[element];
         }
     }
-    loop_counter = Math.floor(core_storage_data.count);
-    do{
-        core_elements[loop_counter] = document.getElementById(loop_counter);
-    }while(loop_counter--);
+    for(let i = 0; i < core_storage_data.count; i++){
+        core_elements[i] = document.getElementById(i);
+    }
 
     randomize();
 }
 
 function randomize(){
-    let loop_counter = Math.floor(core_storage_data.count);
-    do{
-        const style = core_elements[loop_counter].style;
+    for(let i = 0; i < core_storage_data.count; i++){
+        const style = core_elements[i].style;
         style.height = core_storage_data.height;
         style.width = core_storage_data.width;
-    }while(loop_counter--);
+    }
 
     changed_color = '#' + core_random_hex();
     default_color = '#' + core_random_hex();
@@ -101,11 +98,10 @@ function update(){
         update_counter = 1;
     }
 
-    let loop_counter = Math.floor(core_storage_data.count);
-    do{
-        core_elements[Math.floor(core_storage_data.count) - loop_counter].style.backgroundColor =
-          loop_counter % update_counter === 0
+    for(let i = 0; i < core_storage_data.count; i++){
+        core_elements[i].style.backgroundColor =
+          i % update_counter === 0
             ? default_color
             : changed_color;
-    }while(loop_counter--);
+    }
 }
