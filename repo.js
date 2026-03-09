@@ -40,19 +40,19 @@ function repo_init(){
         'randomize': {
           'onclick': function(){
               randomize();
-              core_escape();
+              core_escape(false);
           },
         },
         'remake': {
           'onclick': function(){
               create_squares();
-              core_escape();
+              core_escape(false);
           },
         },
         'restart': {
           'onclick': function(){
               reset();
-              core_escape();
+              core_escape(false);
           },
         },
       },
